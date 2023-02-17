@@ -19,7 +19,7 @@ export const GlobalStyle = createGlobalStyle`
     list-style: none;
   }
 
-  button: {
+  button {
     background: transparent;
     border: 0;
     outline: 0;
@@ -40,5 +40,4 @@ export const GlobalStyle = createGlobalStyle`
     min-height: 100vh;
     padding-bottom: 10px;
   }
-
 `
