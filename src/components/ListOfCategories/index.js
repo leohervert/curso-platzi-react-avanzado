@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, Fragment } from 'react'
 import { Category } from '../Category'
 import { ListOfSkeletonCategories } from '../ListOfSkeletonCategories'
 import { List, Item } from './styles'
@@ -34,15 +34,17 @@ export const ListOfCategories = () => {
 
   const renderList = fixed => (
     <List fixed={fixed}>
-      {loading ? (
-        <ListOfSkeletonCategories />
-      ) : (
-        categories.map(category => (
-          <Item key={category.id}>
-            <Category {...category} />
-          </Item>
-        ))
-      )}
+      {loading
+        ? (
+          <ListOfSkeletonCategories />
+          )
+        : (
+            categories.map(category => (
+              <Item key={category.id}>
+                <Category {...category} />
+              </Item>
+            ))
+          )}
     </List>
   )
 
