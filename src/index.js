@@ -2,7 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import { App } from './App'
 import { ApolloClient, ApolloProvider, InMemoryCache } from '@apollo/client'
-
+import { BrowserRouter } from 'react-router-dom'
 const client = new ApolloClient({
   uri: 'https://petgran-server-lhervert-leohervert.vercel.app/graphql',
   cache: new InMemoryCache()
@@ -10,7 +10,9 @@ const client = new ApolloClient({
 
 ReactDOM.render(
   <ApolloProvider client={client}>
-    <App />
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
   </ApolloProvider>,
   document.getElementById('app')
 )
