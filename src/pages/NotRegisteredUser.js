@@ -2,6 +2,7 @@ import React from 'react'
 import { UserForm } from '../components/UserForm'
 import Context from '../Context'
 import { RegisterMutation } from '../container/RegisterMutation'
+import { LoginMutation } from '../container/LoginMutation'
 export const NotRegisteredUser = () => (
   <Context.Consumer>
     {({ activateAuth }) => {
@@ -28,7 +29,27 @@ export const NotRegisteredUser = () => (
               )
             }}
           </RegisterMutation>
-          <UserForm title='Iniciar Sesión' onSubmit={activateAuth} />
+          <LoginMutation>
+            {(login, { data, loading, error }) => {
+              const onSubmit = ({ email, password }) => {
+                const input = { email, password }
+                const variables = { input }
+                login({ variables }).then(activateAuth)
+              }
+              console.log(error)
+              const errorMessage =
+                error && 'La contraseña no es correcta o el usuario no existe.'
+
+              return (
+                <UserForm
+                  disabled={loading}
+                  error={errorMessage}
+                  title='Iniciar Sesión'
+                  onSubmit={onSubmit}
+                />
+              )
+            }}
+          </LoginMutation>
         </>
       )
     }}
