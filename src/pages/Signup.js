@@ -14,6 +14,7 @@ export const SignUp = () => {
           register({ variables }).then(({ data }) => {
             const { signup } = data
             activateAuth(signup)
+            window.location('/')
           })
         }
 
