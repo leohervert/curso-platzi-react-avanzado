@@ -5,8 +5,8 @@ export const Logo = props => (
   <Link to='/'>
     <Svg
       xmlns='http://www.w3.org/2000/svg'
-      width={406.025}
-      height={124.4}
+      width={400}
+      height={100}
       preserveAspectRatio='xMidYMid'
       style={{
         background: '0 0'
