@@ -9,6 +9,7 @@ import { User } from './pages/User'
 import { Favs } from './pages/Favs'
 import { NotRegisteredUser } from './pages/NotRegisteredUser'
 import Context from './Context'
+import { SignUp } from './pages/Signup'
 
 export const App = () => {
   return (
@@ -33,6 +34,7 @@ export const App = () => {
               <Routes>
                 <Route path='/favs' element={<NotRegisteredUser />} />
                 <Route path='/user' element={<NotRegisteredUser />} />
+                <Route path='/signup' element={<SignUp />} />
               </Routes>
               )}
       </Context.Consumer>
