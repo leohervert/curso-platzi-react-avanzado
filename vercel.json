@@ -7,15 +7,19 @@
   "routes": [
       {
           "src": "(.*).js",
-          "dest": "/$1.js"            
+          "dest": "/$1.js"
       },
       {
           "src": "(.*).json",
-          "dest": "/$1.json"            
+          "dest": "/$1.json"
       },
       {
           "src": "/.*",
           "dest": "index.html"
+      },
+      {
+        "src": "(.*).png",
+        "dest": "/$1.png"
       }
   ]
 } 
