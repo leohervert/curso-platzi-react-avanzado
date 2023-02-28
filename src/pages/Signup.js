@@ -3,7 +3,7 @@ import { UserForm } from '../components/UserForm'
 import { Context } from '../Context'
 import { RegisterMutation } from '../container/RegisterMutation'
 
-export const SignUp = () => {
+export default () => {
   const { activateAuth } = useContext(Context)
   return (
     <RegisterMutation>
