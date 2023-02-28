@@ -3,7 +3,8 @@ import { ListOfCategories } from '../components/ListOfCategories'
 import { ListOfPhotoCards } from '../container/ListOfPhotoCards'
 import { useParams } from 'react-router-dom'
 import { Layout } from '../components/Layout'
-export const Home = props => {
+
+const HomePage = () => {
   const params = useParams()
   const { id } = params
   return (
@@ -16,3 +17,5 @@ export const Home = props => {
     </Layout>
   )
 }
+
+export const Home = React.memo(HomePage)
