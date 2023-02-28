@@ -2,9 +2,10 @@ import React, { useContext } from 'react'
 import { UserForm } from '../components/UserForm'
 import { Context } from '../Context'
 import { RegisterMutation } from '../container/RegisterMutation'
-
+import { useNavigate } from 'react-router-dom'
 export default () => {
   const { activateAuth } = useContext(Context)
+  const navigate = useNavigate()
   return (
     <RegisterMutation>
       {(register, { data, loading, error }) => {
@@ -14,7 +15,7 @@ export default () => {
           register({ variables }).then(({ data }) => {
             const { signup } = data
             activateAuth(signup)
-            window.location('/')
+            navigate('/')
           })
         }
 
